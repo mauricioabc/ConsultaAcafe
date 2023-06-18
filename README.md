@@ -3,7 +3,7 @@
 Interpreta o retorno JSON resultante do processo de login no site do vestibular da ACAFE.
 
 ## Como usar?
-Acessar o [repositório](https://github.com/mauricioabc/ConsultaAcafe) e realizar o login.
+Acessar o [repositório](https://mauricioabc.github.io/ConsultaAcafe) e realizar o login.
 
 ## Contribuições
 
