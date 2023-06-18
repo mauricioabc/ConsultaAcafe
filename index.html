@@ -98,7 +98,7 @@
 </head>
 <body>
   <form id="loginForm" method="POST">
-    <h2 class="results-title">Visualizar resultados</h2>
+    <h2 class="results-title">Visualizar resultados - ACAFE</h2>
     <label for="cpf">CPF:</label>
     <input type="text" id="cpf" name="cpf" required><br><br>
     <label for="senha">Senha:</label>
@@ -106,9 +106,10 @@
     <input type="submit" value="Enviar">
   </form>
 
+  <div id="resultContainer"></div>
+
   <div id="responseContainer"></div>
 
-  <div id="resultContainer" class="resultContainer"></div>
 
   <script>
     $(document).ready(function() {
@@ -154,8 +155,8 @@
             $('<div>').addClass('result-item').text('Situação: ' + response.detalhes.USU_SITUACAO).appendTo(resultContainer);
             $('<div>').addClass('result-item').text('Posição no curso: ' + response.detalhes.POSICAO_CURSO).appendTo(resultContainer);
             $('<div>').addClass('result-item').text('Posição geral: ' + response.detalhes.POSICAO_GERAL).appendTo(resultContainer);
-                $('<div>').addClass('result-title').text('Base de dados').appendTo(resultContainer);
-
+            $('<div>').addClass('result-title').text('Base de dados').appendTo(resultContainer);
+            
             // Cria a tabela e os cabeçalhos
             var table = $('<table>').addClass('response-table');
             var thead = $('<thead>');
@@ -179,8 +180,11 @@
             table.append(thead);
             table.append(tbody);
   
-            // Adiciona o resultado consolidado e a tabela ao responseContainer
-            $('#responseContainer').empty().append(resultContainer).append(table);
+            // Adiciona o resultado consolidado resultContainer
+            $('#resultContainer').empty().append(resultContainer);
+
+            // Adiciona a tabela ao responseContainer
+            $('#responseContainer').empty().append(table);
           },
           error: function(error) {
             // Lida com erros de solicitação aqui
